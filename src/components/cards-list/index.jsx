@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card } from "../card";
+import  Card from "../card";
 import "./style.css";
 
 const CardsList = ({ cardsList }) => {
@@ -7,10 +7,10 @@ const CardsList = ({ cardsList }) => {
 
   const handleSuitFilter = (e) => {
     if (e.target.id = suitFilter) {
-      suitFilter = true;
+      setSuitFilter(true);
       e.target.checked = false;
     } else {
-      suitFilter = e.target.id
+      setSuitFilter(e.target.id) 
     }
   };
 
@@ -24,7 +24,7 @@ const CardsList = ({ cardsList }) => {
           id="SPADES"
           name="suit"
         />
-        <label for="SPADES">Espadas</label>
+        <label>Espadas</label>
 
         <input
           onClick={handleSuitFilter}
@@ -32,7 +32,7 @@ const CardsList = ({ cardsList }) => {
           id="HEARTS"
           name="suit"
         />
-        <label for="HEARTS">Copas</label>
+        <label>Copas</label>
 
         <input
           onClick={handleSuitFilter}
@@ -40,7 +40,7 @@ const CardsList = ({ cardsList }) => {
           id="CLUBS"
           name="suit"
         />
-        <label for="CLUBS">Paus</label>
+        <label>Paus</label>
 
         <input
           onClick={handleSuitFilter}
@@ -48,9 +48,11 @@ const CardsList = ({ cardsList }) => {
           id="DIAMONDS"
           name="suit"
         />
-        <label for="DIAMONDS">Ouros</label>
+        <label>Ouros</label>
       </div>
-    </div>
+    
+
+
     <div>
 
       {!suitFilter &&
@@ -64,7 +66,10 @@ const CardsList = ({ cardsList }) => {
           .map((actual, index) => {
             <Card card={actual} key={index} />;
           })}
+       </div>   
     </div>
   );
 };
 
+
+export default CardsList
