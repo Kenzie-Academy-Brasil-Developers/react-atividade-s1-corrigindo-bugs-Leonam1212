@@ -56,7 +56,7 @@ const CardsList = ({ cardsList }) => {
                   <label for="DIAMONDS">Ouros</label>
             </div>
  
-    <div>
+    <div className = "Render-cards">
 
       {suitFilter === "" &&
         cardsList.map((actual, index) => {
